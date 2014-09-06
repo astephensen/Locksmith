@@ -22,7 +22,6 @@ class KeyMonitor: NSObject {
     func startMonitoring() {
         eventMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(.KeyUpMask, handler: { (event: NSEvent!) -> Void in
             let characters = event.characters
-            println("Received key: \(characters)")
             self.delegate?.keyMonitorDidMonitorKeyPress(self, key: characters)
         })
         println("Started monitoring.")

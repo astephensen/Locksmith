@@ -30,9 +30,16 @@ class Locksmith: NSObject, KeyMonitorDelegate {
     
     func loadShortcutList() {
         
-        // TODO: Load a real list.
-        shortcutList["test"] = "superawesometest"
-        shortcutList["asdf"] = "23rerg34aerhaerh"
+        // Load the array the preference pane has assembled and flatten it into a single dictionary.
+        shortcutList = [String: String]()
+        let shortcuts = NSUserDefaults.standardUserDefaults().arrayForKey("shortcuts")
+        if shortcuts != nil {
+            for shortcutObject in shortcuts! {
+                let shortcut = shortcutObject["shortcut"] as String
+                let replacement = shortcutObject["replacement"] as String
+                shortcutList[shortcut] = replacement
+            }
+        }
     }
     
     func checkBuffer() {

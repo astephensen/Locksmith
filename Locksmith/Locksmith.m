@@ -9,6 +9,8 @@
 #import "Locksmith.h"
 
 #define LocksmithShortcutsArrayKey "shortcuts"
+#define BundleIdentifier "io.alan.LocksmithHelper"
+#define NotificationIdentifier @"io.alan.Locksmith.prefPaneNotification"
 
 @interface Locksmith () <NSTableViewDataSource, NSTableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *shortcuts;
@@ -37,10 +39,7 @@
 
 - (void)loadShortcuts
 {
-    const char* const appID = [[[NSBundle bundleForClass:[self class]] bundleIdentifier] cStringUsingEncoding:NSASCIIStringEncoding];
-    CFStringRef bundleID = CFStringCreateWithCString(kCFAllocatorDefault, appID, kCFStringEncodingASCII);
-    
-    CFArrayRef shortcutsArrayRef = CFPreferencesCopyAppValue(CFSTR(LocksmithShortcutsArrayKey), bundleID);
+    CFArrayRef shortcutsArrayRef = CFPreferencesCopyAppValue(CFSTR(LocksmithShortcutsArrayKey), CFSTR(BundleIdentifier));
     if (shortcutsArrayRef != NULL) {
         NSArray *shortcutsArray = (__bridge_transfer NSArray *)(shortcutsArrayRef);
         self.shortcuts = [shortcutsArray mutableCopy];
@@ -48,18 +47,15 @@
     } else {
         self.shortcuts = [NSMutableArray array];
     }
-    
-    CFRelease(bundleID);
 }
 
 - (void)saveShortcuts
 {
-    const char* const appID = [[[NSBundle bundleForClass:[self class]] bundleIdentifier] cStringUsingEncoding:NSASCIIStringEncoding];
-    CFStringRef bundleID = CFStringCreateWithCString(kCFAllocatorDefault, appID, kCFStringEncodingASCII);
+    CFPreferencesSetAppValue(CFSTR(LocksmithShortcutsArrayKey), (__bridge CFPropertyListRef)(self.shortcuts), CFSTR(BundleIdentifier));
     
-    CFPreferencesSetAppValue(CFSTR(LocksmithShortcutsArrayKey), (__bridge CFPropertyListRef)(self.shortcuts), bundleID);
-    
-    CFRelease(bundleID);
+    // Send notification to helper app.
+    NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
+    [center postNotificationName:@"Preferences Notification" object:NotificationIdentifier userInfo:nil deliverImmediately:YES];
 }
 
 #pragma mark - Actions

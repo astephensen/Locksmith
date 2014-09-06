@@ -35,6 +35,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func setupLocksmith() {
         locksmith = Locksmith()
+        
+        let object = "io.alan.Locksmith.prefPaneNotification"
+        let center = NSDistributedNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "preferencesPaneChangedWithNotification:", name: "Preferences Notification", object: object)
+    }
+    
+    func preferencesPaneChangedWithNotification(notification: NSNotification) {
+        locksmith.loadShortcutList()
     }
 }
 
