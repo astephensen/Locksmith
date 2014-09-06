@@ -20,17 +20,8 @@
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="668" height="368"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bd0-Ei-95Z">
-                        <rect key="frame" x="14" y="320" width="77" height="32"/>
-                        <buttonCell key="cell" type="push" title="Neat?" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eNA-lG-fSJ">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                </subviews>
             </view>
-            <point key="canvasLocation" x="418" y="399"/>
+            <point key="canvasLocation" x="442" y="398"/>
         </window>
     </objects>
 </document>

@@ -10,8 +10,14 @@
 
 @implementation Locksmith
 
++ (void)initialize
+{
+
+}
+
 - (void)mainViewDidLoad
 {
+    
 }
 
 @end
