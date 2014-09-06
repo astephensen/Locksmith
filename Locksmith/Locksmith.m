@@ -99,9 +99,12 @@
     CFPreferencesSetAppValue(CFSTR(LocksmithShortcutsArrayKey), (__bridge CFPropertyListRef)(self.shortcuts), CFSTR(BundleIdentifier));
     CFPreferencesAppSynchronize(CFSTR(BundleIdentifier));
     
-    // Send notification to helper app.
-    NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
-    [center postNotificationName:@"Preferences Notification" object:NotificationIdentifier userInfo:nil deliverImmediately:YES];
+    // Tell helper application the shortcuts have changed.
+    NSConnection *helperConnection = [NSConnection connectionWithRegisteredName:@"LocksmithHelper" host:nil];;
+    id remoteObject = [helperConnection rootProxy];
+    if ([remoteObject respondsToSelector:NSSelectorFromString(@"reloadShortcuts")]) {
+        [remoteObject performSelector:NSSelectorFromString(@"reloadShortcuts")];
+    }
 }
 
 - (void)updateStatus

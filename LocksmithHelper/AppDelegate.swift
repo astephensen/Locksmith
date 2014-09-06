@@ -16,9 +16,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, LocksmithServerDelegate {
     var locksmithServerConnection: NSConnection!
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-        
+
         // Create the locksmith server so the preferences pane can connect to our helper application.
         locksmithServer = LocksmithServer()
+        locksmithServer.delegate = self
         locksmithServerConnection = NSConnection.serviceConnectionWithName("LocksmithHelper", rootObject: locksmithServer);
         
         // Check if the application is already trusted and launch the locksmith instance.
