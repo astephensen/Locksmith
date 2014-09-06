@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E74AEB4119BAAE2900A6F4AA /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = E74AEB4019BAAE2900A6F4AA /* Locksmith.h */; };
 		E74AEB4319BAAE2900A6F4AA /* Locksmith.m in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB4219BAAE2900A6F4AA /* Locksmith.m */; };
-		E74AEB4519BAAE2900A6F4AA /* Locksmith.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */; };
 		E74AEB4819BAAE2900A6F4AA /* Locksmith.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB4619BAAE2900A6F4AA /* Locksmith.xib */; };
 		E74AEB5719BAAE8200A6F4AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB5619BAAE8200A6F4AA /* main.swift */; };
 		E74AEB5919BAAE8200A6F4AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB5819BAAE8200A6F4AA /* AppDelegate.swift */; };
@@ -25,6 +24,7 @@
 		E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB8319BAAF8100A6F4AA /* Images.xcassets */; };
 		E74AEB8819BAF2E800A6F4AA /* LocksmithHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E74AEB8E19BAFF0E00A6F4AA /* LocksmithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB8D19BAFF0E00A6F4AA /* LocksmithServer.swift */; };
+		E74AEB9019BB239000A6F4AA /* Locksmith.icns in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB8F19BB239000A6F4AA /* Locksmith.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		E74AEB3F19BAAE2900A6F4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E74AEB4019BAAE2900A6F4AA /* Locksmith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Locksmith.h; sourceTree = "<group>"; };
 		E74AEB4219BAAE2900A6F4AA /* Locksmith.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Locksmith.m; sourceTree = "<group>"; };
-		E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Locksmith.tiff; sourceTree = "<group>"; };
 		E74AEB4719BAAE2900A6F4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Locksmith.xib; sourceTree = "<group>"; };
 		E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocksmithHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E74AEB5519BAAE8200A6F4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestingWindowController.xib; sourceTree = "<group>"; };
 		E74AEB8319BAAF8100A6F4AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E74AEB8D19BAFF0E00A6F4AA /* LocksmithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocksmithServer.swift; sourceTree = "<group>"; };
+		E74AEB8F19BB239000A6F4AA /* Locksmith.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Locksmith.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +124,9 @@
 		E74AEB3D19BAAE2900A6F4AA /* Locksmith */ = {
 			isa = PBXGroup;
 			children = (
+				E74AEB8F19BB239000A6F4AA /* Locksmith.icns */,
 				E74AEB4019BAAE2900A6F4AA /* Locksmith.h */,
 				E74AEB4219BAAE2900A6F4AA /* Locksmith.m */,
-				E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */,
 				E74AEB4619BAAE2900A6F4AA /* Locksmith.xib */,
 				E74AEB3E19BAAE2900A6F4AA /* Supporting Files */,
 			);
@@ -325,7 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74AEB4819BAAE2900A6F4AA /* Locksmith.xib in Resources */,
-				E74AEB4519BAAE2900A6F4AA /* Locksmith.tiff in Resources */,
+				E74AEB9019BB239000A6F4AA /* Locksmith.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

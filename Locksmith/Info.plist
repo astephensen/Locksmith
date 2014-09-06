@@ -25,7 +25,7 @@
 	<key>NSMainNibFile</key>
 	<string>Locksmith</string>
 	<key>NSPrefPaneIconFile</key>
-	<string>Locksmith.tiff</string>
+	<string>Locksmith.icns</string>
 	<key>NSPrefPaneIconLabel</key>
 	<string>Locksmith</string>
 	<key>NSPrincipalClass</key>
