@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="Locksmith">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="optionsButton" destination="qOR-Sz-cPd" id="RCr-ax-QnH"/>
+                <outlet property="optionsMenu" destination="77i-AI-gjg" id="N0i-DU-de5"/>
                 <outlet property="tabView" destination="JAb-7Y-kL6" id="cQE-oe-nSr"/>
                 <outlet property="tableView" destination="zH1-iN-iCq" id="R7S-KH-JXL"/>
             </connections>
@@ -201,6 +203,19 @@
                                                 <action selector="removeClicked:" target="-2" id="Amd-6C-f1e"/>
                                             </connections>
                                         </button>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qOR-Sz-cPd">
+                                            <rect key="frame" x="618" y="19" width="30" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="qOR-Sz-cPd" secondAttribute="height" multiplier="1.2:1" id="Twp-2I-99v"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" title="O" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JZ3-8t-nB5">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="optionsClicked:" target="-2" id="wBH-KK-QIL"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ujl-6S-rv6" firstAttribute="leading" secondItem="SQX-OV-Ddn" secondAttribute="leading" id="20s-x4-zIg"/>
@@ -216,9 +231,12 @@
                                         <constraint firstItem="ujl-6S-rv6" firstAttribute="top" secondItem="FJL-4F-PJJ" secondAttribute="top" constant="20" id="XQP-YK-Q0w"/>
                                         <constraint firstItem="SQX-OV-Ddn" firstAttribute="top" secondItem="ujl-6S-rv6" secondAttribute="bottom" constant="-1" id="ZUE-m3-ZPJ"/>
                                         <constraint firstItem="SID-Eu-JQM" firstAttribute="trailing" secondItem="SQX-OV-Ddn" secondAttribute="trailing" id="adg-O8-iSD"/>
+                                        <constraint firstItem="SID-Eu-JQM" firstAttribute="trailing" secondItem="qOR-Sz-cPd" secondAttribute="trailing" id="gYN-3n-24v"/>
                                         <constraint firstAttribute="bottom" secondItem="SID-Eu-JQM" secondAttribute="bottom" constant="20" id="m4h-Qb-P9h"/>
+                                        <constraint firstItem="SID-Eu-JQM" firstAttribute="bottom" secondItem="qOR-Sz-cPd" secondAttribute="bottom" id="sTm-mj-ozX"/>
                                         <constraint firstItem="SID-Eu-JQM" firstAttribute="top" secondItem="SQX-OV-Ddn" secondAttribute="bottom" constant="-1" id="utG-Kd-hWK"/>
                                         <constraint firstItem="SID-Eu-JQM" firstAttribute="top" secondItem="kmT-Ui-xoa" secondAttribute="top" id="wk3-gV-xpM"/>
+                                        <constraint firstItem="SID-Eu-JQM" firstAttribute="top" secondItem="qOR-Sz-cPd" secondAttribute="top" id="xYB-QH-qzv"/>
                                     </constraints>
                                 </view>
                             </tabViewItem>
@@ -256,5 +274,22 @@
             </view>
             <point key="canvasLocation" x="552" y="416"/>
         </window>
+        <menu id="77i-AI-gjg">
+            <items>
+                <menuItem title="Stop Locksmith" id="tXL-Z5-zK0">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="stopClicked:" target="-2" id="25p-6v-Imq"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Restart Locksmith" id="dFq-Vk-on1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="restartClicked:" target="-2" id="W17-Hk-tMq"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="680" y="713.5"/>
+        </menu>
     </objects>
 </document>

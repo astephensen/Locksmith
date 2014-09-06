@@ -19,15 +19,12 @@
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet NSTextField *statusLabel;
 @property (nonatomic, weak) IBOutlet NSButton *launchButton;
+@property (nonatomic, weak) IBOutlet NSButton *optionsButton;
+@property (nonatomic, weak) IBOutlet NSMenu *optionsMenu;
 @property (nonatomic, strong) NSConnection *locksmithPreferencesServerConnection;
 @end
 
 @implementation Locksmith
-
-+ (void)initialize
-{
-
-}
 
 - (void)mainViewDidLoad
 {
@@ -172,6 +169,8 @@
     }
 }
 
+#pragma mark Toolbar Button Actions
+
 - (IBAction)addClicked:(id)sender
 {
     NSDictionary *blankShortcut = @{@"shortcut": @"",
@@ -188,6 +187,26 @@
         [self.tableView removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:selectedRow] withAnimation:NSTableViewAnimationEffectFade];
         [self saveShortcuts];
     }
+}
+
+- (IBAction)optionsClicked:(id)sender
+{
+    NSEvent *event = [[NSApplication sharedApplication] currentEvent];
+    [NSMenu popUpContextMenu:self.optionsMenu withEvent:event forView:(NSButton *)sender];
+}
+
+#pragma mark - Options Menu Actions
+
+- (IBAction)stopClicked:(id)sender
+{
+    [self terminateHelperApplication];
+    [self.tabView selectTabViewItemAtIndex:2];
+}
+
+- (IBAction)restartClicked:(id)sender
+{
+    [self terminateHelperApplication];
+    [self launchHelperApplication];
 }
 
 #pragma mark - Table View Data Source
