@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E74AEB4119BAAE2900A6F4AA /* Locksmith.h in Headers */ = {isa = PBXBuildFile; fileRef = E74AEB4019BAAE2900A6F4AA /* Locksmith.h */; };
+		E74AEB4319BAAE2900A6F4AA /* Locksmith.m in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB4219BAAE2900A6F4AA /* Locksmith.m */; };
+		E74AEB4519BAAE2900A6F4AA /* Locksmith.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */; };
+		E74AEB4819BAAE2900A6F4AA /* Locksmith.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB4619BAAE2900A6F4AA /* Locksmith.xib */; };
+		E74AEB5719BAAE8200A6F4AA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB5619BAAE8200A6F4AA /* main.swift */; };
+		E74AEB5919BAAE8200A6F4AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB5819BAAE8200A6F4AA /* AppDelegate.swift */; };
+		E74AEB5E19BAAE8200A6F4AA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB5C19BAAE8200A6F4AA /* MainMenu.xib */; };
+		E74AEB6A19BAAE8200A6F4AA /* LocksmithHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB6919BAAE8200A6F4AA /* LocksmithHelperTests.swift */; };
+		E74AEB7A19BAAEF500A6F4AA /* KeyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7219BAAEF500A6F4AA /* KeyMonitor.swift */; };
+		E74AEB7B19BAAEF500A6F4AA /* KeySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7319BAAEF500A6F4AA /* KeySender.swift */; };
+		E74AEB7C19BAAEF500A6F4AA /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7419BAAEF500A6F4AA /* Locksmith.swift */; };
+		E74AEB7D19BAAEF500A6F4AA /* SetupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */; };
+		E74AEB7E19BAAEF500A6F4AA /* SetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */; };
+		E74AEB7F19BAAEF500A6F4AA /* TestingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */; };
+		E74AEB8019BAAEF500A6F4AA /* TestingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */; };
+		E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB8319BAAF8100A6F4AA /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E74AEB6419BAAE8200A6F4AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E74AEB3219BAAE2900A6F4AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E74AEB5119BAAE8200A6F4AA;
+			remoteInfo = LocksmithHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E74AEB3B19BAAE2900A6F4AA /* Locksmith.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Locksmith.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74AEB3F19BAAE2900A6F4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74AEB4019BAAE2900A6F4AA /* Locksmith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Locksmith.h; sourceTree = "<group>"; };
+		E74AEB4219BAAE2900A6F4AA /* Locksmith.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Locksmith.m; sourceTree = "<group>"; };
+		E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Locksmith.tiff; sourceTree = "<group>"; };
+		E74AEB4719BAAE2900A6F4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Locksmith.xib; sourceTree = "<group>"; };
+		E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocksmithHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74AEB5519BAAE8200A6F4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74AEB5619BAAE8200A6F4AA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E74AEB5819BAAE8200A6F4AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E74AEB5D19BAAE8200A6F4AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E74AEB6319BAAE8200A6F4AA /* LocksmithHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocksmithHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74AEB6819BAAE8200A6F4AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E74AEB6919BAAE8200A6F4AA /* LocksmithHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocksmithHelperTests.swift; sourceTree = "<group>"; };
+		E74AEB7219BAAEF500A6F4AA /* KeyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyMonitor.swift; sourceTree = "<group>"; };
+		E74AEB7319BAAEF500A6F4AA /* KeySender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeySender.swift; sourceTree = "<group>"; };
+		E74AEB7419BAAEF500A6F4AA /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
+		E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupWindowController.swift; sourceTree = "<group>"; };
+		E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupWindowController.xib; sourceTree = "<group>"; };
+		E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingWindowController.swift; sourceTree = "<group>"; };
+		E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestingWindowController.xib; sourceTree = "<group>"; };
+		E74AEB8319BAAF8100A6F4AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E74AEB3719BAAE2900A6F4AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB4F19BAAE8200A6F4AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB6019BAAE8200A6F4AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E74AEB3119BAAE2900A6F4AA = {
+			isa = PBXGroup;
+			children = (
+				E74AEB3D19BAAE2900A6F4AA /* Locksmith */,
+				E74AEB5319BAAE8200A6F4AA /* LocksmithHelper */,
+				E74AEB6619BAAE8200A6F4AA /* LocksmithHelperTests */,
+				E74AEB3C19BAAE2900A6F4AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E74AEB3C19BAAE2900A6F4AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB3B19BAAE2900A6F4AA /* Locksmith.prefPane */,
+				E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */,
+				E74AEB6319BAAE8200A6F4AA /* LocksmithHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E74AEB3D19BAAE2900A6F4AA /* Locksmith */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB4019BAAE2900A6F4AA /* Locksmith.h */,
+				E74AEB4219BAAE2900A6F4AA /* Locksmith.m */,
+				E74AEB4419BAAE2900A6F4AA /* Locksmith.tiff */,
+				E74AEB4619BAAE2900A6F4AA /* Locksmith.xib */,
+				E74AEB3E19BAAE2900A6F4AA /* Supporting Files */,
+			);
+			path = Locksmith;
+			sourceTree = "<group>";
+		};
+		E74AEB3E19BAAE2900A6F4AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB3F19BAAE2900A6F4AA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E74AEB5319BAAE8200A6F4AA /* LocksmithHelper */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB5819BAAE8200A6F4AA /* AppDelegate.swift */,
+				E74AEB7119BAAEF500A6F4AA /* Classes */,
+				E74AEB8219BAAF8100A6F4AA /* Resources */,
+				E74AEB5419BAAE8200A6F4AA /* Supporting Files */,
+				E74AEB7519BAAEF500A6F4AA /* Window Controllers */,
+			);
+			path = LocksmithHelper;
+			sourceTree = "<group>";
+		};
+		E74AEB5419BAAE8200A6F4AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB5519BAAE8200A6F4AA /* Info.plist */,
+				E74AEB5619BAAE8200A6F4AA /* main.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E74AEB6619BAAE8200A6F4AA /* LocksmithHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB6919BAAE8200A6F4AA /* LocksmithHelperTests.swift */,
+				E74AEB6719BAAE8200A6F4AA /* Supporting Files */,
+			);
+			path = LocksmithHelperTests;
+			sourceTree = "<group>";
+		};
+		E74AEB6719BAAE8200A6F4AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB6819BAAE8200A6F4AA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E74AEB7119BAAEF500A6F4AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB7219BAAEF500A6F4AA /* KeyMonitor.swift */,
+				E74AEB7319BAAEF500A6F4AA /* KeySender.swift */,
+				E74AEB7419BAAEF500A6F4AA /* Locksmith.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E74AEB7519BAAEF500A6F4AA /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */,
+				E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */,
+				E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */,
+				E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */,
+			);
+			path = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		E74AEB8219BAAF8100A6F4AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E74AEB5C19BAAE8200A6F4AA /* MainMenu.xib */,
+				E74AEB8319BAAF8100A6F4AA /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E74AEB3819BAAE2900A6F4AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB4119BAAE2900A6F4AA /* Locksmith.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E74AEB3A19BAAE2900A6F4AA /* Locksmith */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74AEB4B19BAAE2900A6F4AA /* Build configuration list for PBXNativeTarget "Locksmith" */;
+			buildPhases = (
+				E74AEB3619BAAE2900A6F4AA /* Sources */,
+				E74AEB3719BAAE2900A6F4AA /* Frameworks */,
+				E74AEB3819BAAE2900A6F4AA /* Headers */,
+				E74AEB3919BAAE2900A6F4AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Locksmith;
+			productName = Locksmith;
+			productReference = E74AEB3B19BAAE2900A6F4AA /* Locksmith.prefPane */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E74AEB5119BAAE8200A6F4AA /* LocksmithHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74AEB6B19BAAE8200A6F4AA /* Build configuration list for PBXNativeTarget "LocksmithHelper" */;
+			buildPhases = (
+				E74AEB4E19BAAE8200A6F4AA /* Sources */,
+				E74AEB4F19BAAE8200A6F4AA /* Frameworks */,
+				E74AEB5019BAAE8200A6F4AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocksmithHelper;
+			productName = LocksmithHelper;
+			productReference = E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E74AEB6219BAAE8200A6F4AA /* LocksmithHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E74AEB6E19BAAE8200A6F4AA /* Build configuration list for PBXNativeTarget "LocksmithHelperTests" */;
+			buildPhases = (
+				E74AEB5F19BAAE8200A6F4AA /* Sources */,
+				E74AEB6019BAAE8200A6F4AA /* Frameworks */,
+				E74AEB6119BAAE8200A6F4AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E74AEB6519BAAE8200A6F4AA /* PBXTargetDependency */,
+			);
+			name = LocksmithHelperTests;
+			productName = LocksmithHelperTests;
+			productReference = E74AEB6319BAAE8200A6F4AA /* LocksmithHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E74AEB3219BAAE2900A6F4AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Alan Stephensen";
+				TargetAttributes = {
+					E74AEB3A19BAAE2900A6F4AA = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					E74AEB5119BAAE8200A6F4AA = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					E74AEB6219BAAE8200A6F4AA = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = E74AEB5119BAAE8200A6F4AA;
+					};
+				};
+			};
+			buildConfigurationList = E74AEB3519BAAE2900A6F4AA /* Build configuration list for PBXProject "Locksmith" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E74AEB3119BAAE2900A6F4AA;
+			productRefGroup = E74AEB3C19BAAE2900A6F4AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E74AEB3A19BAAE2900A6F4AA /* Locksmith */,
+				E74AEB5119BAAE8200A6F4AA /* LocksmithHelper */,
+				E74AEB6219BAAE8200A6F4AA /* LocksmithHelperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E74AEB3919BAAE2900A6F4AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB4819BAAE2900A6F4AA /* Locksmith.xib in Resources */,
+				E74AEB4519BAAE2900A6F4AA /* Locksmith.tiff in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB5019BAAE8200A6F4AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB7E19BAAEF500A6F4AA /* SetupWindowController.xib in Resources */,
+				E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */,
+				E74AEB8019BAAEF500A6F4AA /* TestingWindowController.xib in Resources */,
+				E74AEB5E19BAAE8200A6F4AA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB6119BAAE8200A6F4AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E74AEB3619BAAE2900A6F4AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB4319BAAE2900A6F4AA /* Locksmith.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB4E19BAAE8200A6F4AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB7C19BAAEF500A6F4AA /* Locksmith.swift in Sources */,
+				E74AEB7F19BAAEF500A6F4AA /* TestingWindowController.swift in Sources */,
+				E74AEB7D19BAAEF500A6F4AA /* SetupWindowController.swift in Sources */,
+				E74AEB7B19BAAEF500A6F4AA /* KeySender.swift in Sources */,
+				E74AEB5919BAAE8200A6F4AA /* AppDelegate.swift in Sources */,
+				E74AEB5719BAAE8200A6F4AA /* main.swift in Sources */,
+				E74AEB7A19BAAEF500A6F4AA /* KeyMonitor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E74AEB5F19BAAE8200A6F4AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E74AEB6A19BAAE8200A6F4AA /* LocksmithHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E74AEB6519BAAE8200A6F4AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E74AEB5119BAAE8200A6F4AA /* LocksmithHelper */;
+			targetProxy = E74AEB6419BAAE8200A6F4AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E74AEB4619BAAE2900A6F4AA /* Locksmith.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E74AEB4719BAAE2900A6F4AA /* Base */,
+			);
+			name = Locksmith.xib;
+			sourceTree = "<group>";
+		};
+		E74AEB5C19BAAE8200A6F4AA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E74AEB5D19BAAE8200A6F4AA /* Base */,
+			);
+			name = MainMenu.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E74AEB4919BAAE2900A6F4AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E74AEB4A19BAAE2900A6F4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E74AEB4C19BAAE2900A6F4AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Locksmith/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Debug;
+		};
+		E74AEB4D19BAAE2900A6F4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Locksmith/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/PreferencePanes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = prefPane;
+			};
+			name = Release;
+		};
+		E74AEB6C19BAAE8200A6F4AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocksmithHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E74AEB6D19BAAE8200A6F4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = LocksmithHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E74AEB6F19BAAE8200A6F4AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocksmithHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocksmithHelper.app/Contents/MacOS/LocksmithHelper";
+			};
+			name = Debug;
+		};
+		E74AEB7019BAAE8200A6F4AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LocksmithHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LocksmithHelper.app/Contents/MacOS/LocksmithHelper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E74AEB3519BAAE2900A6F4AA /* Build configuration list for PBXProject "Locksmith" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74AEB4919BAAE2900A6F4AA /* Debug */,
+				E74AEB4A19BAAE2900A6F4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74AEB4B19BAAE2900A6F4AA /* Build configuration list for PBXNativeTarget "Locksmith" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74AEB4C19BAAE2900A6F4AA /* Debug */,
+				E74AEB4D19BAAE2900A6F4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74AEB6B19BAAE8200A6F4AA /* Build configuration list for PBXNativeTarget "LocksmithHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74AEB6C19BAAE8200A6F4AA /* Debug */,
+				E74AEB6D19BAAE8200A6F4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E74AEB6E19BAAE8200A6F4AA /* Build configuration list for PBXNativeTarget "LocksmithHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E74AEB6F19BAAE8200A6F4AA /* Debug */,
+				E74AEB7019BAAE8200A6F4AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E74AEB3219BAAE2900A6F4AA /* Project object */;
+}
