@@ -15,9 +15,11 @@
 
 @interface Locksmith () <NSTableViewDataSource, NSTableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *shortcuts;
+@property (nonatomic, weak) IBOutlet NSTabView *tabView;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet NSTextField *statusLabel;
 @property (nonatomic, weak) IBOutlet NSButton *launchButton;
+@property (nonatomic, strong) NSConnection *locksmithPreferencesServerConnection;
 @end
 
 @implementation Locksmith
@@ -29,14 +31,53 @@
 
 - (void)mainViewDidLoad
 {
+    [super mainViewDidLoad];
+    
     // Setup table view.
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:@"public.text"]];
+}
+
+- (void)willSelect
+{
+    [super willSelect];
     
-    // Load saved shortcuts.
+    // Check if the helper is trusted.
+    if (![self isHelperApplicationRunning]) {
+        [self.tabView selectTabViewItemAtIndex:2];
+    } else {
+        [self launchSetup];
+    }
+}
+
+- (void)didSelect
+{
+    [super didSelect];
+}
+
+#pragma mark - Setup
+
+- (void)launchSetup
+{
+    [self checkTrusted];
     [self loadShortcuts];
     [self.tableView reloadData];
-    
     [self updateStatus];
+}
+
+- (void)checkTrusted
+{
+    // Connect to the helper application and ask if it is trusted.
+    NSConnection *helperConnection = [NSConnection connectionWithRegisteredName:@"LocksmithHelper" host:nil];;
+    id remoteObject = [helperConnection rootProxy];
+    if ([remoteObject respondsToSelector:NSSelectorFromString(@"isProcessTrusted")]) {
+        NSNumber *object = [remoteObject performSelector:NSSelectorFromString(@"isProcessTrusted")];
+        BOOL isProcessTrusted = [object boolValue];
+        if (!isProcessTrusted) {
+            [self.tabView selectTabViewItemAtIndex:0];
+        } else {
+            [self.tabView selectTabViewItemAtIndex:1];
+        }
+    }
 }
 
 #pragma mark - Methods
@@ -110,18 +151,22 @@
 
 #pragma mark - Actions
 
-- (IBAction)launchButtonClicked:(id)sender
+- (IBAction)launchClicked:(id)sender
 {
-    if ([self isHelperApplicationRunning]) {
-        [self terminateHelperApplication];
-    } else {
-        [self launchHelperApplication];
-    }
-    
-    // Update the status after a short delay to give the app a chance to launch.
+    [self launchHelperApplication];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self updateStatus];
+        [self launchSetup];
     });
+}
+
+- (IBAction)askForTrustClicked:(id)sender
+{
+    // Connect to the helper application and ask to be authorised.
+    NSConnection *helperConnection = [NSConnection connectionWithRegisteredName:@"LocksmithHelper" host:nil];;
+    id remoteObject = [helperConnection rootProxy];
+    if ([remoteObject respondsToSelector:NSSelectorFromString(@"askForTrust")]) {
+        [remoteObject performSelector:NSSelectorFromString(@"askForTrust")];
+    }
 }
 
 - (IBAction)addClicked:(id)sender

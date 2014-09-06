@@ -8,21 +8,22 @@
 
 import Cocoa
 
-class AppDelegate: NSObject, NSApplicationDelegate {
-                            
+class AppDelegate: NSObject, NSApplicationDelegate, LocksmithServerDelegate {
     @IBOutlet weak var window: NSWindow!
-    var setupWindowController: NSWindowController!
-    var testingWindowController: NSWindowController!
     var keyMonitor: KeyMonitor!
     var locksmith: Locksmith!
+    var locksmithServer: LocksmithServer!
+    var locksmithServerConnection: NSConnection!
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
-
-        if SetupWindowController.shouldDisplay() {
-            setupWindowController = SetupWindowController(windowNibName: "SetupWindowController")
-            setupWindowController.loadWindow()
-            setupWindowController.showWindow(self)
-        } else {
+        
+        // Create the locksmith server so the preferences pane can connect to our helper application.
+        locksmithServer = LocksmithServer()
+        locksmithServerConnection = NSConnection.serviceConnectionWithName("LocksmithHelper", rootObject: locksmithServer);
+        
+        // Check if the application is already trusted and launch the locksmith instance.
+        // If it isn't trusted we will wait for the locksmith server delegate to tell us when it is ok to start.
+        if AXIsProcessTrusted() == 1 {
             setupLocksmith()
         }
     }
@@ -34,15 +35,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: Functions
     
     func setupLocksmith() {
-        locksmith = Locksmith()
-        
-        let object = "io.alan.Locksmith.prefPaneNotification"
-        let center = NSDistributedNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "preferencesPaneChangedWithNotification:", name: "Preferences Notification", object: object)
+        if locksmith == nil {
+            locksmith = Locksmith()
+        }
     }
     
-    func preferencesPaneChangedWithNotification(notification: NSNotification) {
-        println("Reloading shortcut list.")
+    // MARK: Locksmith Server Delegate
+    
+    func locksmithServerIsNowTrusted() {
+        setupLocksmith()
+    }
+    
+    func locksmithServerShortcutsModified() {
         locksmith.loadShortcutList()
     }
 }
