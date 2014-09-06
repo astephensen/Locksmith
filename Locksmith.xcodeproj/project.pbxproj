@@ -23,6 +23,7 @@
 		E74AEB7F19BAAEF500A6F4AA /* TestingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */; };
 		E74AEB8019BAAEF500A6F4AA /* TestingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */; };
 		E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB8319BAAF8100A6F4AA /* Images.xcassets */; };
+		E74AEB8819BAF2E800A6F4AA /* LocksmithHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,19 @@
 			remoteInfo = LocksmithHelper;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E74AEB8619BAEE7600A6F4AA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				E74AEB8819BAF2E800A6F4AA /* LocksmithHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E74AEB3B19BAAE2900A6F4AA /* Locksmith.prefPane */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Locksmith.prefPane; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +229,7 @@
 				E74AEB3719BAAE2900A6F4AA /* Frameworks */,
 				E74AEB3819BAAE2900A6F4AA /* Headers */,
 				E74AEB3919BAAE2900A6F4AA /* Resources */,
+				E74AEB8619BAEE7600A6F4AA /* CopyFiles */,
 			);
 			buildRules = (
 			);

@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="Locksmith">
             <connections>
                 <outlet property="_window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="launchButton" destination="ZcN-zq-1CI" id="VgN-fh-94N"/>
+                <outlet property="statusLabel" destination="cMm-xg-7Sn" id="Ho5-to-rQF"/>
                 <outlet property="tableView" destination="zH1-iN-iCq" id="R7S-KH-JXL"/>
             </connections>
         </customObject>
@@ -23,13 +25,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQX-OV-Ddn">
-                        <rect key="frame" x="20" y="49" width="628" height="275"/>
+                        <rect key="frame" x="20" y="44" width="628" height="240"/>
                         <clipView key="contentView" id="DyI-co-fke">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="zH1-iN-iCq">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="10" height="10"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,7 +126,7 @@
                         </scroller>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ujl-6S-rv6">
-                        <rect key="frame" x="20" y="322" width="628" height="27"/>
+                        <rect key="frame" x="20" y="282" width="628" height="27"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="9Af-Um-6gc"/>
                         </constraints>
@@ -135,9 +136,9 @@
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SID-Eu-JQM">
-                        <rect key="frame" x="20" y="19" width="628" height="32"/>
+                        <rect key="frame" x="20" y="19" width="628" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="I0V-MR-CU7"/>
+                            <constraint firstAttribute="height" constant="25" id="I0V-MR-CU7"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GiQ-vN-CyR">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -145,9 +146,9 @@
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ELQ-Ro-1QW">
-                        <rect key="frame" x="20" y="19" width="30" height="32"/>
+                        <rect key="frame" x="20" y="19" width="30" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="ELQ-Ro-1QW" secondAttribute="height" multiplier="1:1" id="ADR-ju-Dcq"/>
+                            <constraint firstAttribute="width" secondItem="ELQ-Ro-1QW" secondAttribute="height" multiplier="1.2:1" id="ADR-ju-Dcq"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" title="+" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zMP-PK-gtl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -158,9 +159,9 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kmT-Ui-xoa">
-                        <rect key="frame" x="49" y="19" width="30" height="32"/>
+                        <rect key="frame" x="49" y="19" width="30" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="kmT-Ui-xoa" secondAttribute="height" multiplier="1:1" id="tvs-hm-jnb"/>
+                            <constraint firstAttribute="width" secondItem="kmT-Ui-xoa" secondAttribute="height" multiplier="1.2:1" id="tvs-hm-jnb"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" title="-" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0MY-4i-S5n">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -168,6 +169,24 @@
                         </buttonCell>
                         <connections>
                             <action selector="removeClicked:" target="-2" id="Amd-6C-f1e"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cMm-xg-7Sn">
+                        <rect key="frame" x="18" y="331" width="38" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Jvw-J6-JPS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZcN-zq-1CI">
+                        <rect key="frame" x="588" y="324" width="60" height="25"/>
+                        <buttonCell key="cell" type="roundTextured" title="Launch" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="ssp-qw-TwK">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="launchButtonClicked:" target="-2" id="x0E-8k-iGb"/>
                         </connections>
                     </button>
                 </subviews>
@@ -178,7 +197,10 @@
                     <constraint firstAttribute="bottom" secondItem="SID-Eu-JQM" secondAttribute="bottom" constant="20" id="Css-vb-szN"/>
                     <constraint firstItem="kmT-Ui-xoa" firstAttribute="leading" secondItem="ELQ-Ro-1QW" secondAttribute="trailing" constant="-1" id="E74-SC-AEB"/>
                     <constraint firstItem="SID-Eu-JQM" firstAttribute="leading" secondItem="SQX-OV-Ddn" secondAttribute="leading" id="ED7-du-cmq"/>
+                    <constraint firstItem="ZcN-zq-1CI" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="Ibg-lc-Itz"/>
+                    <constraint firstItem="cMm-xg-7Sn" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="SVm-BD-LeW"/>
                     <constraint firstItem="ELQ-Ro-1QW" firstAttribute="leading" secondItem="SID-Eu-JQM" secondAttribute="leading" id="TW3-90-bn7"/>
+                    <constraint firstAttribute="trailing" secondItem="ZcN-zq-1CI" secondAttribute="trailing" constant="20" id="Vqy-pQ-9Px"/>
                     <constraint firstItem="SID-Eu-JQM" firstAttribute="trailing" secondItem="SQX-OV-Ddn" secondAttribute="trailing" id="WdH-5O-mhb"/>
                     <constraint firstItem="ujl-6S-rv6" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="aKI-OC-iR6"/>
                     <constraint firstItem="SID-Eu-JQM" firstAttribute="top" secondItem="SQX-OV-Ddn" secondAttribute="bottom" constant="-1" id="ati-yj-RTU"/>
@@ -187,7 +209,8 @@
                     <constraint firstItem="SQX-OV-Ddn" firstAttribute="top" secondItem="ujl-6S-rv6" secondAttribute="bottom" constant="-1" id="lq9-f6-asP"/>
                     <constraint firstItem="ujl-6S-rv6" firstAttribute="trailing" secondItem="SQX-OV-Ddn" secondAttribute="trailing" id="mIA-Tp-6Q2"/>
                     <constraint firstItem="ujl-6S-rv6" firstAttribute="leading" secondItem="SQX-OV-Ddn" secondAttribute="leading" id="qZc-0X-dgq"/>
-                    <constraint firstItem="ujl-6S-rv6" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="yFo-qW-udM"/>
+                    <constraint firstItem="cMm-xg-7Sn" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="yAH-pB-a8B"/>
+                    <constraint firstItem="ujl-6S-rv6" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="60" id="yFo-qW-udM"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="510" y="483"/>

@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func preferencesPaneChangedWithNotification(notification: NSNotification) {
+        println("Reloading shortcut list.")
         locksmith.loadShortcutList()
     }
 }

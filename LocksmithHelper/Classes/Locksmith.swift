@@ -40,14 +40,16 @@ class Locksmith: NSObject, KeyMonitorDelegate {
                 shortcutList[shortcut] = replacement
             }
         }
+        
+        println("-- Loaded Shortcuts --")
+        println(shortcutList)
     }
-    
+
     func checkBuffer() {
         
         // Check if the buffer matches a replacement.
         var clearBuffer = true
         for (shortcut, replacement) in shortcutList {
-            println(shortcut)
             let range = shortcut.rangeOfString(buffer, options: .AnchoredSearch)
             if range != nil {
                 if shortcut == buffer {

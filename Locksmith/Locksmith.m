@@ -10,11 +10,14 @@
 
 #define LocksmithShortcutsArrayKey "shortcuts"
 #define BundleIdentifier "io.alan.LocksmithHelper"
+#define BundleIdentifierString @BundleIdentifier
 #define NotificationIdentifier @"io.alan.Locksmith.prefPaneNotification"
 
 @interface Locksmith () <NSTableViewDataSource, NSTableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *shortcuts;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
+@property (nonatomic, weak) IBOutlet NSTextField *statusLabel;
+@property (nonatomic, weak) IBOutlet NSButton *launchButton;
 @end
 
 @implementation Locksmith
@@ -29,10 +32,11 @@
     // Setup table view.
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:@"public.text"]];
     
-    
     // Load saved shortcuts.
     [self loadShortcuts];
     [self.tableView reloadData];
+    
+    [self updateStatus];
 }
 
 #pragma mark - Methods
@@ -52,13 +56,73 @@
 - (void)saveShortcuts
 {
     CFPreferencesSetAppValue(CFSTR(LocksmithShortcutsArrayKey), (__bridge CFPropertyListRef)(self.shortcuts), CFSTR(BundleIdentifier));
+    CFPreferencesAppSynchronize(CFSTR(BundleIdentifier));
     
     // Send notification to helper app.
     NSDistributedNotificationCenter *center = [NSDistributedNotificationCenter defaultCenter];
     [center postNotificationName:@"Preferences Notification" object:NotificationIdentifier userInfo:nil deliverImmediately:YES];
 }
 
+- (void)updateStatus
+{
+    if ([self isHelperApplicationRunning]) {
+        self.launchButton.title = @"Stop Locksmith";
+        self.statusLabel.stringValue = @"Locksmith is running.";
+    } else {
+        self.launchButton.title = @"Start Locksmith";
+        self.statusLabel.stringValue = @"Locksmith is not currently running.";
+    }
+}
+
+#pragma mark - Helper Application Methods
+
+- (BOOL)isHelperApplicationRunning
+{
+    for (NSRunningApplication *app in [NSWorkspace sharedWorkspace].runningApplications) {
+        if ([app.bundleIdentifier isEqualToString:BundleIdentifierString]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)launchHelperApplication
+{
+    if ([self isHelperApplicationRunning]) {
+        NSLog(@"Helper application is already running!");
+        return NO;
+    }
+    
+    NSURL *helperURL = [[self bundle] URLForResource:@"LocksmithHelper" withExtension:@"app"];
+    NSRunningApplication *runningApplication = [[NSWorkspace sharedWorkspace] launchApplicationAtURL:helperURL options:NSWorkspaceLaunchDefault configuration:nil error:NULL];
+    return (runningApplication ? YES : NO);
+}
+
+- (BOOL)terminateHelperApplication
+{
+    for (NSRunningApplication *app in [NSWorkspace sharedWorkspace].runningApplications) {
+        if ([app.bundleIdentifier isEqualToString:BundleIdentifierString]) {
+            return [app terminate];
+        }
+    }
+    return NO;
+}
+
 #pragma mark - Actions
+
+- (IBAction)launchButtonClicked:(id)sender
+{
+    if ([self isHelperApplicationRunning]) {
+        [self terminateHelperApplication];
+    } else {
+        [self launchHelperApplication];
+    }
+    
+    // Update the status after a short delay to give the app a chance to launch.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self updateStatus];
+    });
+}
 
 - (IBAction)addClicked:(id)sender
 {
@@ -121,6 +185,7 @@
 
 - (BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation
 {
+    // TODO: All this drag and drop stuff.
     return YES;
 }
 
