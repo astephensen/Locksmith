@@ -17,10 +17,6 @@
 		E74AEB7A19BAAEF500A6F4AA /* KeyMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7219BAAEF500A6F4AA /* KeyMonitor.swift */; };
 		E74AEB7B19BAAEF500A6F4AA /* KeySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7319BAAEF500A6F4AA /* KeySender.swift */; };
 		E74AEB7C19BAAEF500A6F4AA /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7419BAAEF500A6F4AA /* Locksmith.swift */; };
-		E74AEB7D19BAAEF500A6F4AA /* SetupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */; };
-		E74AEB7E19BAAEF500A6F4AA /* SetupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */; };
-		E74AEB7F19BAAEF500A6F4AA /* TestingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */; };
-		E74AEB8019BAAEF500A6F4AA /* TestingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */; };
 		E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E74AEB8319BAAF8100A6F4AA /* Images.xcassets */; };
 		E74AEB8819BAF2E800A6F4AA /* LocksmithHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E74AEB5219BAAE8200A6F4AA /* LocksmithHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E74AEB8E19BAFF0E00A6F4AA /* LocksmithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74AEB8D19BAFF0E00A6F4AA /* LocksmithServer.swift */; };
@@ -67,10 +63,6 @@
 		E74AEB7219BAAEF500A6F4AA /* KeyMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyMonitor.swift; sourceTree = "<group>"; };
 		E74AEB7319BAAEF500A6F4AA /* KeySender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeySender.swift; sourceTree = "<group>"; };
 		E74AEB7419BAAEF500A6F4AA /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
-		E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupWindowController.swift; sourceTree = "<group>"; };
-		E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupWindowController.xib; sourceTree = "<group>"; };
-		E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingWindowController.swift; sourceTree = "<group>"; };
-		E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestingWindowController.xib; sourceTree = "<group>"; };
 		E74AEB8319BAAF8100A6F4AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E74AEB8D19BAFF0E00A6F4AA /* LocksmithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocksmithServer.swift; sourceTree = "<group>"; };
 		E74AEB8F19BB239000A6F4AA /* Locksmith.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Locksmith.icns; sourceTree = "<group>"; };
@@ -148,7 +140,6 @@
 				E74AEB7119BAAEF500A6F4AA /* Classes */,
 				E74AEB8219BAAF8100A6F4AA /* Resources */,
 				E74AEB5419BAAE8200A6F4AA /* Supporting Files */,
-				E74AEB7519BAAEF500A6F4AA /* Window Controllers */,
 			);
 			path = LocksmithHelper;
 			sourceTree = "<group>";
@@ -188,17 +179,6 @@
 				E74AEB8D19BAFF0E00A6F4AA /* LocksmithServer.swift */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		E74AEB7519BAAEF500A6F4AA /* Window Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				E74AEB7619BAAEF500A6F4AA /* SetupWindowController.swift */,
-				E74AEB7719BAAEF500A6F4AA /* SetupWindowController.xib */,
-				E74AEB7819BAAEF500A6F4AA /* TestingWindowController.swift */,
-				E74AEB7919BAAEF500A6F4AA /* TestingWindowController.xib */,
-			);
-			path = "Window Controllers";
 			sourceTree = "<group>";
 		};
 		E74AEB8219BAAF8100A6F4AA /* Resources */ = {
@@ -333,9 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E74AEB7E19BAAEF500A6F4AA /* SetupWindowController.xib in Resources */,
 				E74AEB8419BAAF8100A6F4AA /* Images.xcassets in Resources */,
-				E74AEB8019BAAEF500A6F4AA /* TestingWindowController.xib in Resources */,
 				E74AEB5E19BAAE8200A6F4AA /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,8 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E74AEB7C19BAAEF500A6F4AA /* Locksmith.swift in Sources */,
-				E74AEB7F19BAAEF500A6F4AA /* TestingWindowController.swift in Sources */,
-				E74AEB7D19BAAEF500A6F4AA /* SetupWindowController.swift in Sources */,
 				E74AEB7B19BAAEF500A6F4AA /* KeySender.swift in Sources */,
 				E74AEB5919BAAE8200A6F4AA /* AppDelegate.swift in Sources */,
 				E74AEB8E19BAFF0E00A6F4AA /* LocksmithServer.swift in Sources */,
