@@ -1,0 +1,1 @@
+Locksmith is a simple app that will replace text as you type. It is comprised of a system preferences pane and a small helper application to prevent any unsightly icons in your dock or menubar.
