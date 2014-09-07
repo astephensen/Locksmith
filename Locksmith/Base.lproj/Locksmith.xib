@@ -182,7 +182,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ELQ-Ro-1QW" secondAttribute="height" multiplier="1.2:1" id="ADR-ju-Dcq"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="+" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zMP-PK-gtl">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon_add" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zMP-PK-gtl">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -195,7 +195,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="kmT-Ui-xoa" secondAttribute="height" multiplier="1.2:1" id="tvs-hm-jnb"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="smallSquare" title="-" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0MY-4i-S5n">
+                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon_remove" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0MY-4i-S5n">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -289,7 +289,11 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="680" y="713.5"/>
+            <point key="canvasLocation" x="800" y="692.5"/>
         </menu>
     </objects>
+    <resources>
+        <image name="icon_add" width="23" height="23"/>
+        <image name="icon_remove" width="23" height="23"/>
+    </resources>
 </document>
