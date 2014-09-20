@@ -45,22 +45,15 @@ class Locksmith: NSObject, KeyMonitorDelegate {
         println(shortcutList)
     }
 
-    func checkBuffer() {
-        
-        // println("Buffer is \(buffer)")
-
-        // Check if the buffer matches a replacement.
-        var clearBuffer = true
+    func checkBuffer() {    
+        // Check if the the suffix of the buffer matches the shortcut. Send the shortcut and clear the buffer if there is a match.
         for (shortcut, replacement) in shortcutList {
-            // We check the suffix as the user may have select-all and deleted, which fills the buffer with garbage. This seems to work fairly well.
             if buffer.hasSuffix(shortcut) {
                 sendShortcut(shortcut)
+                buffer.removeAll()
                 break
             }
         }
-
-        // Once the buffer has been checked it will be cleared for the next set of keys.
-        buffer.removeAll()
     }
     
     func sendShortcut(shortcut: String) {
