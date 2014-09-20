@@ -25,6 +25,8 @@
 		E78BB8E419BBE3850054DB04 /* icon_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78BB8E019BBE3850054DB04 /* icon_add@2x.png */; };
 		E78BB8E519BBE3850054DB04 /* icon_remove.png in Resources */ = {isa = PBXBuildFile; fileRef = E78BB8E119BBE3850054DB04 /* icon_remove.png */; };
 		E78BB8E619BBE3850054DB04 /* icon_remove@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E78BB8E219BBE3850054DB04 /* icon_remove@2x.png */; };
+		E7F726EE19CD066100C16EB8 /* icon_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F726EC19CD066100C16EB8 /* icon_settings.png */; };
+		E7F726EF19CD066100C16EB8 /* icon_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F726ED19CD066100C16EB8 /* icon_settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		E78BB8E019BBE3850054DB04 /* icon_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_add@2x.png"; sourceTree = "<group>"; };
 		E78BB8E119BBE3850054DB04 /* icon_remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_remove.png; sourceTree = "<group>"; };
 		E78BB8E219BBE3850054DB04 /* icon_remove@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_remove@2x.png"; sourceTree = "<group>"; };
+		E7F726EC19CD066100C16EB8 /* icon_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_settings.png; sourceTree = "<group>"; };
+		E7F726ED19CD066100C16EB8 /* icon_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 		E78BB8DE19BBE3850054DB04 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E7F726EC19CD066100C16EB8 /* icon_settings.png */,
+				E7F726ED19CD066100C16EB8 /* icon_settings@2x.png */,
 				E78BB8DF19BBE3850054DB04 /* icon_add.png */,
 				E78BB8E019BBE3850054DB04 /* icon_add@2x.png */,
 				E78BB8E119BBE3850054DB04 /* icon_remove.png */,
@@ -326,9 +332,11 @@
 			files = (
 				E78BB8E519BBE3850054DB04 /* icon_remove.png in Resources */,
 				E74AEB4819BAAE2900A6F4AA /* Locksmith.xib in Resources */,
+				E7F726EF19CD066100C16EB8 /* icon_settings@2x.png in Resources */,
 				E78BB8E419BBE3850054DB04 /* icon_add@2x.png in Resources */,
 				E78BB8E619BBE3850054DB04 /* icon_remove@2x.png in Resources */,
 				E78BB8E319BBE3850054DB04 /* icon_add.png in Resources */,
+				E7F726EE19CD066100C16EB8 /* icon_settings.png in Resources */,
 				E74AEB9019BB239000A6F4AA /* Locksmith.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
