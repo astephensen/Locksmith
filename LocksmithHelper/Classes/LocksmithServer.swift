@@ -25,7 +25,8 @@ class LocksmithServer: NSObject {
     }
     
     func askForTrust() {
-        let options = [kAXTrustedCheckOptionPrompt.takeRetainedValue(): true] as NSDictionary
+        let trusted = kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString
+        let options = [trusted: true]
         AXIsProcessTrustedWithOptions(options);
     }
     
