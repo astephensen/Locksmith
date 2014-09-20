@@ -10,6 +10,8 @@ import Cocoa
 
 protocol KeyMonitorDelegate {
     func keyMonitorDidMonitorKeyPress(keyMonitor: KeyMonitor, key: String)
+    func keyMonitorDidMonitorSpacePress(keyMonitor: KeyMonitor)
+    func keyMonitorDidMonitorBackspacePress(keyMonitor: KeyMonitor)
 }
 
 class KeyMonitor: NSObject {
@@ -21,8 +23,17 @@ class KeyMonitor: NSObject {
     */
     func startMonitoring() {
         eventMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(.KeyUpMask, handler: { (event: NSEvent!) -> Void in
-            let characters = event.characters
-            self.delegate?.keyMonitorDidMonitorKeyPress(self, key: characters)
+            switch event.keyCode {
+            // Spacebar.
+            case 49:
+                self.delegate?.keyMonitorDidMonitorSpacePress(self)
+            // Backspace.
+            case 51:
+                self.delegate?.keyMonitorDidMonitorBackspacePress(self)
+            default:
+                let characters = event.characters
+                self.delegate?.keyMonitorDidMonitorKeyPress(self, key: characters)
+            }
         })
         println("Started monitoring.")
     }

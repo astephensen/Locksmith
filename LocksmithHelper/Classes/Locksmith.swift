@@ -47,27 +47,24 @@ class Locksmith: NSObject, KeyMonitorDelegate {
 
     func checkBuffer() {
         
+        // println("Buffer is \(buffer)")
+
         // Check if the buffer matches a replacement.
         var clearBuffer = true
         for (shortcut, replacement) in shortcutList {
-            let range = shortcut.rangeOfString(buffer, options: .AnchoredSearch)
-            if range != nil {
-                if shortcut == buffer {
-                    sendShortcut(shortcut)
-                    break
-                } else {
-                    clearBuffer = false
-                }
+            // We check the suffix as the user may have select-all and deleted, which fills the buffer with garbage. This seems to work fairly well.
+            if buffer.hasSuffix(shortcut) {
+                sendShortcut(shortcut)
+                break
             }
         }
-        
-        if clearBuffer {
-            buffer.removeAll()
-        }
+
+        // Once the buffer has been checked it will be cleared for the next set of keys.
+        buffer.removeAll()
     }
     
     func sendShortcut(shortcut: String) {
-        keySender.sendBackspaces(countElements(shortcut))
+        keySender.sendBackspaces(countElements(shortcut) + 1)
         keySender.sendString(shortcutList[shortcut]!)
     }
     
@@ -75,6 +72,15 @@ class Locksmith: NSObject, KeyMonitorDelegate {
     
     func keyMonitorDidMonitorKeyPress(keyMonitor: KeyMonitor, key: String) {
         buffer += key
+    }
+    
+    func keyMonitorDidMonitorBackspacePress(keyMonitor: KeyMonitor) {
+        if countElements(buffer) > 0 {
+            buffer.removeAtIndex(buffer.endIndex.predecessor())
+        }
+    }
+    
+    func keyMonitorDidMonitorSpacePress(keyMonitor: KeyMonitor) {
         checkBuffer()
     }
 }
